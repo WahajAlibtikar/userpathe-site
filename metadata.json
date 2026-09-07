@@ -1,0 +1,6 @@
+{
+  "name": "دورات التجربة الرقمية",
+  "description": "من التعلّم إلى صناعة الأثر - مسارات التصميم والتقنية والذكاء الاصطناعي والإرشاد المهني",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
