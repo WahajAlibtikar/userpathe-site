@@ -7,6 +7,7 @@ import { Header } from "./components/Header";
 import { ArrowDownLeft, ArrowLeft, BookOpen, BriefcaseBusiness, CodeXml, Compass, GraduationCap, Layers3, LayoutDashboard, MessageSquareText, PenTool, Smartphone, Sparkles, Sprout, Users, X } from "lucide-react";
 
 const courseIcons = [Layers3, LayoutDashboard, MessageSquareText, CodeXml, Sparkles, Smartphone, Sprout, Compass];
+const coursePrices: Record<string, string> = { "01": "349 ر.س", "02": "449 ر.س", "03": "399 ر.س", "04": "299 ر.س", "05": "249 ر.س", "06": "299 ر.س", "07": "199 ر.س", "08": "249 ر.س" };
 
 function CredentialCard({ credential: c }: { credential: Credential }) {
   return <li className="credentialCard">
@@ -175,7 +176,7 @@ export default function Home() {
         <div className="modalToolbar"><span className="tag" lang="en" dir="ltr">{selectedCourse.tag}</span><button className="modalClose" onClick={() => setSelectedCourse(null)} aria-label="إغلاق التفاصيل" autoFocus><X aria-hidden="true"/></button></div>
         <h2 id="course-title">{selectedCourse.title}</h2>
         <p className="modalMeta">{selectedCourse.meta}</p>
-        <div className="modalIntro"><section><h3>هدف المسار</h3><p>{selectedCourse.goal}</p></section><section><h3>ماذا ستتعلّم؟</h3><p>{selectedCourse.details}</p></section></div>
+        <div className="purchaseStrip"><span>دورة يقودها وكيل ذكاء اصطناعي</span><strong>{coursePrices[selectedCourse.n]}</strong><button type="button" className="primaryButton" onClick={() => alert("هذه واجهة شراء تجريبية — سيتم تفعيل الدفع لاحقًا.")}>سجّل اهتمامك</button></div><div className="modalIntro"><section><h3>هدف المسار</h3><p>{selectedCourse.goal}</p></section><section><h3>ماذا ستتعلّم؟</h3><p>{selectedCourse.details}</p></section></div>
         <div className="chapters"><div className="chaptersHead"><h3>محاور المسار</h3><small>{selectedCourse.chapters.length} محاور</small></div>
           <ol>{selectedCourse.chapters.map((chapter,index) => <li key={chapter.title}><span>{String(index+1).padStart(2,"0")}</span><div><h4>{chapter.title}</h4><p className="chapterMeta"><span>{chapter.hours}</span><bdi lang="en" dir="ltr">{chapter.tools}</bdi></p><p className="chapterExercise"><strong>تطبيق عملي:</strong> {chapter.exercise}</p></div></li>)}</ol>
         </div>
