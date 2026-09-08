@@ -481,3 +481,32 @@ em{font-style:normal}
 
 /* Frontend purchase preview */
 .purchaseStrip{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 20px;margin:24px 0;border:1px solid rgba(234,76,29,.25);background:#fff8f4;border-radius:18px}.purchaseStrip span{flex:1;min-width:180px}.purchaseStrip strong,.coursePrice,.skillPriceRow strong{color:#ea4c1d;font-size:1.15rem}.purchaseStrip .primaryButton{border:0;cursor:pointer}.skillPriceRow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.08)}.skillPriceRow span{font-size:.78rem;color:#777}
+
+/* Compact headers for inner pages (Articles, Skills) - No massive hero */
+.pageCompactHeader{padding-block:36px 28px;border-bottom:1px solid var(--line);margin-bottom:36px}
+.pageCompactHeader h1{font-size:clamp(2rem,4vw,3rem);line-height:1.25;margin:12px 0 10px;color:var(--ink)}
+.pageCompactHeader p{font-size:1.0625rem;line-height:1.8;color:var(--muted);max-width:680px;margin:0}
+
+/* Dedicated Contact Section at bottom of Homepage */
+.contactSection{background:#fff;border-top:1px solid var(--line);padding-block:90px 100px}
+.contactGrid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.contactInfo h2{font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.25;margin:12px 0 18px;color:var(--ink)}
+.contactInfo h2 em{color:var(--orange)}
+.contactInfo>p{font-size:1.1rem;line-height:1.9;color:var(--muted);max-width:540px;margin-bottom:32px}
+.directContactLinks{display:grid;gap:14px;max-width:480px}
+.contactMethodBtn{display:flex;align-items:center;gap:16px;padding:16px 20px;background:#f9f9f7;border:1px solid var(--line);border-radius:12px;color:var(--ink);transition:border-color .2s,background .2s,transform .2s}
+.contactMethodBtn:hover{border-color:var(--orange);background:#fff;transform:translateY(-2px)}
+.contactMethodBtn svg{width:22px;height:22px;color:var(--orange);flex-shrink:0}
+.contactMethodBtn strong{display:block;font-size:1rem;color:var(--ink);margin-bottom:2px}
+.contactMethodBtn small{display:block;font-size:.825rem;color:var(--muted)}
+.contactFormCard{background:#fdfdfc;border:1px solid var(--line);border-radius:16px;padding:36px 32px}
+.formSelect,.formTextarea{width:100%;padding:12px 16px;border-radius:8px;border:1px solid var(--line);background:#fff;font-size:.95rem;font-family:inherit;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.formSelect:focus,.formTextarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(234,76,29,.12)}
+.formTextarea{resize:vertical;min-height:90px}
+
+@media(max-width:860px){
+  .contactGrid{grid-template-columns:1fr;gap:40px}
+  .contactSection{padding-block:60px 70px}
+  .contactFormCard{padding:24px 20px}
+}
+

@@ -3,13 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ArrowDownLeft, ArrowRight, Menu, X } from "lucide-react";
+import { ArrowDownLeft, Menu, X } from "lucide-react";
 
-export interface HeaderProps {
-  onOpenAbout?: () => void;
-}
-
-export function Header({ onOpenAbout }: HeaderProps) {
+export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLButtonElement>(null);
@@ -43,13 +39,6 @@ export function Header({ onOpenAbout }: HeaderProps) {
     setMenuOpen(false);
   };
 
-  const handleAboutClick = () => {
-    setMenuOpen(false);
-    if (onOpenAbout) {
-      onOpenAbout();
-    }
-  };
-
   return (
     <header className="nav wrap" id="top">
       {/* Brand Logo */}
@@ -63,26 +52,18 @@ export function Header({ onOpenAbout }: HeaderProps) {
         التجربة <span>الرقمية.</span>
       </Link>
 
-      {/* Main Desktop & Drawer Navigation */}
+      {/* Main Desktop & Drawer Navigation - Independent Pages Only */}
       <nav
         id="main-navigation"
         className={menuOpen ? "links open" : "links"}
         aria-label="التنقل الرئيسي"
       >
         <Link
-          href={isHome ? "#courses" : "/#courses"}
+          href="/"
           onClick={handleLinkClick}
-          className="navItemLink"
+          className={`navItemLink ${pathname === "/" ? "activeNavLink" : ""}`}
         >
-          الدورات
-        </Link>
-
-        <Link
-          href={isHome ? "#method" : "/#method"}
-          onClick={handleLinkClick}
-          className="navItemLink"
-        >
-          رحلة التعلّم
+          الرئيسية
         </Link>
 
         <Link
@@ -90,7 +71,7 @@ export function Header({ onOpenAbout }: HeaderProps) {
           onClick={handleLinkClick}
           className={`navItemLink ${pathname.startsWith("/skills") ? "activeNavLink" : ""}`}
         >
-          مهارات النماذج
+          أدوات الذكاء الاصطناعي
         </Link>
 
         <Link
@@ -101,55 +82,16 @@ export function Header({ onOpenAbout }: HeaderProps) {
           المقالات
         </Link>
 
-        {isHome && onOpenAbout ? (
-          <button
-            type="button"
-            className="navAbout navItemLink"
-            onClick={handleAboutClick}
-            aria-haspopup="dialog"
-            aria-controls="about-dialog"
-          >
-            نبذة عني
-          </button>
-        ) : (
-          <Link
-            href="/#about"
-            onClick={handleLinkClick}
-            className="navItemLink"
-          >
-            نبذة عني
-          </Link>
-        )}
-
-        <Link
-          href={isHome ? "#contact" : "/#contact"}
-          onClick={handleLinkClick}
-          className="navItemLink"
-        >
-          اختر مسارك
-        </Link>
-
         {/* Mobile-only CTA in drawer */}
         <div className="mobileDrawerCta">
-          {isHome ? (
-            <a
-              className="navCta"
-              href="#courses"
-              onClick={handleLinkClick}
-            >
-              <span>استكشف الدورات</span>
-              <ArrowDownLeft aria-hidden="true" />
-            </a>
-          ) : (
-            <Link
-              className="navCta catalogBackCta"
-              href="/"
-              onClick={handleLinkClick}
-            >
-              <ArrowRight aria-hidden="true" />
-              <span>العودة للرئيسية</span>
-            </Link>
-          )}
+          <Link
+            className="navCta"
+            href={isHome ? "#contact" : "/#contact"}
+            onClick={handleLinkClick}
+          >
+            <span>تواصل معنا</span>
+            <ArrowDownLeft aria-hidden="true" />
+          </Link>
         </div>
       </nav>
 
@@ -167,17 +109,13 @@ export function Header({ onOpenAbout }: HeaderProps) {
       </button>
 
       {/* Desktop Header Action Button */}
-      {isHome ? (
-        <a className="navCta desktopOnlyCta" href="#courses">
-          <span>استكشف الدورات</span>
-          <ArrowDownLeft aria-hidden="true" />
-        </a>
-      ) : (
-        <Link className="navCta catalogBackCta desktopOnlyCta" href="/">
-          <ArrowRight aria-hidden="true" />
-          <span>العودة للموقع</span>
-        </Link>
-      )}
+      <Link
+        className="navCta desktopOnlyCta"
+        href={isHome ? "#contact" : "/#contact"}
+      >
+        <span>تواصل معنا</span>
+        <ArrowDownLeft aria-hidden="true" />
+      </Link>
     </header>
   );
 }
