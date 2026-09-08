@@ -46,7 +46,7 @@ export default function SkillsPage() {
         <Breadcrumb
           items={[{ label: "الرئيسية", href: "/" }, { label: "مهارات النماذج" }]}
         />
-        <span className="kicker">مهارات النماذج · skill.md</span>
+        <span className="kicker">مهارات النماذج · skill.md · متجر رقمي</span>
         <h1>
           مهارات جاهزة
           <br />
@@ -101,7 +101,7 @@ export default function SkillsPage() {
                     <h3>
                       <Link href={`/skills/${skill.id}`}>{skill.name}</Link>
                     </h3>
-                    <p>{skill.desc}</p>
+                    <p>{skill.desc}</p><div className="skillPriceRow"><strong>{skill.id === "ux-reviewer" || skill.id === "figma-partner" ? "49 ر.س" : "29 ر.س"}</strong><span>تحميل مدفوع · ملف Markdown</span></div>
                     <div className="skillCardFoot">
                       <small dir="ltr">{skill.models}</small>
                       <Link
@@ -109,7 +109,7 @@ export default function SkillsPage() {
                         className="skillLinkBtn"
                         aria-label={`عرض مهارة ${skill.name}`}
                       >
-                        <span>عرض المهارة</span>
+                        <span>عرض وشراء المهارة</span>
                         <ArrowLeft aria-hidden="true" />
                       </Link>
                     </div>
