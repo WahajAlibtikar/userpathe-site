@@ -97,6 +97,8 @@ export default async function SkillSinglePage({
             </div>
           </header>
 
+          <div className="purchaseStrip skillPurchase"><span>تحميل ملف المهارة بعد الشراء</span><strong>{skill.id === "ux-reviewer" || skill.id === "figma-partner" ? "49 ر.س" : "29 ر.س"}</strong><button type="button" className="primaryButton" onClick={() => alert("هذه واجهة شراء تجريبية — سيتم ربط الدفع لاحقًا.")}>شراء وتحميل</button></div>
+
           <SkillViewTabs skill={skill} />
 
           <nav className="singlePagination" aria-label="تنقل المهارات">
