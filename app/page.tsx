@@ -79,7 +79,7 @@ export default function Home() {
         <div className="heroCopy">
           <div className="eyebrow"><span/> مهارات رقمية. خطوات مهنية.</div>
           <h1 id="hero-title">من التعلّم،<br/><em>إلى صناعة الأثر.</em></h1>
-          <p>طوّر مهاراتك في التصميم والكتابة والتقنية، وابنِ ملف أعمال يعكس قدراتك. مسارات تطبيقية تربط ما تتعلّمه بخطوتك المهنية القادمة وفق أعلى المعايير العالمية.</p>
+          <p>تعلّم كيف تقود وكلاء الذكاء الاصطناعي بالأوامر الصحيحة، وتحوّل الفكرة إلى مخرجات قابلة للاستخدام في التصميم والمنتجات والتقنية.</p>
           <div className="heroActions">
             <a href="#courses" className="primaryButton"><span>استكشف الدورات</span> <ArrowDownLeft aria-hidden="true"/></a>
             <a href="#method" className="textLink"><span>كيف تبدأ الرحلة؟</span> <ArrowLeft aria-hidden="true"/></a>
@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       <section className="courses" id="courses" aria-labelledby="courses-title"><div className="wrap">
-        <div className="sectionHead" data-reveal><div><span className="kicker">مسارات التعلّم</span><h2 id="courses-title">مهارات تبنيها.<br/>وأعمال تتحدّث عنك.</h2></div><p>اختر ما يناسب وجهتك. لكل مسار هدف واضح، ومحاور متدرّجة مبنية على بنشمارك عالمي، وتطبيقات تساعدك على تحويل المعرفة إلى ممارسة.</p></div>
+        <div className="sectionHead" data-reveal><div><span className="kicker">مسارات التعلّم</span><h2 id="courses-title">مهارات تبنيها.<br/>وأعمال تتحدّث عنك.</h2></div><p>كل مسار يضعك في دور قائد للوكيل: تصوغ المهمة، تضبط السياق، تراجع المخرجات، وتبني نتيجة قابلة للقياس.</p></div>
         <div className="courseGrid">{coursesList.map((c,i) => {
           const Icon = courseIcons[i];
           const comingSoon = Boolean(c.comingSoon);
