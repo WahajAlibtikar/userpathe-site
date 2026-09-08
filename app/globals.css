@@ -477,3 +477,7 @@ em{font-style:normal}
 .joinSuccessResetBtn:hover{border-color:var(--orange);color:var(--orange)}
 
 
+
+
+/* Frontend purchase preview */
+.purchaseStrip{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 20px;margin:24px 0;border:1px solid rgba(234,76,29,.25);background:#fff8f4;border-radius:18px}.purchaseStrip span{flex:1;min-width:180px}.purchaseStrip strong,.coursePrice,.skillPriceRow strong{color:#ea4c1d;font-size:1.15rem}.purchaseStrip .primaryButton{border:0;cursor:pointer}.skillPriceRow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.08)}.skillPriceRow span{font-size:.78rem;color:#777}
